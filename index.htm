@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+<script src="jquery/jquery-1.11.2.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<style>
+	.content {
+		border-left: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		padding: 20px;
+	}
+</style>
+<body>
+	<div style="margin: 60px auto">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 text-center">
+				<img src="logo.png" />
+			</div>
+		</div>
+		<div class="row" style="margin-top: 30px;">
+			<div class="col-md-4 col-md-offset-4">
+				<div>
+					<ul class="nav nav-tabs nav-justified">
+						<li id="tabLogin" class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Login</a></li>
+						<li id="tabRegister"><a href="#"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;Register</a></li>
+					</ul>
+					<div class="content">
+						<div id="panelLogin">
+							<form>
+								<div class="row" style="padding: 10px">
+									<input class="form-control" placeholder="User" />
+								</div>
+								<div class="row" style="padding: 10px">
+									<input type="password" class="form-control" placeholder="Password" />
+								</div>
+								<div class="row pull-right" style="padding-right: 15px; padding-bottom: 10px;">
+									<span>
+										<span class="glyphicon glyphicon-qrcode"></span> Qrcode
+									</span>
+									<span>
+										<span class="glyphicon glyphicon-phone"></span> SMS
+									</span>
+								</div>
+								<div class="row" style="padding: 0px 10px 0px 10px;">
+									<button type="button" class="btn btn-primary btn-block">Login</button>
+								</div>
+								<div class="row" style="padding-left: 10px;">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" /> Stay in
+										</label>
+									</div>
+								</div>
+								<div class="row" style="padding: 0px 10px 0px 0px;">
+									<div class="pull-right">								
+										<a>Forgot Password?</a>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div id="panelRegister" style="display: none">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label style="font-weight: normal;" for="user" class="col-sm-3 control-label">User</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="user" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label style="font-weight: normal;" for="pass" class="col-sm-3 control-label">Password</label>
+									<div class="col-sm-9">
+										<input type="password" class="form-control" id="pass" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label style="font-weight: normal;" class="col-sm-3 control-label">Gender</label>
+									<div class="col-sm-9">
+										<label class="radio-inline">
+											<input type="radio" name="gender" value="M" checked /> Male
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="gender" value="F" /> Female
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label style="font-weight: normal;" for="mobile" class="col-sm-3 control-label">Mobile Ph.</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="mobile" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-9 col-sm-offset-3">
+										<label class="checkbox-inline">
+											<input type="checkbox" name="iagree" value="yes" /> I agree
+										</label>
+									</div>
+								</div>
+								<div class="form-group" style="padding: 0px 10px 0px 10px;">
+									<button class="btn btn-primary btn-block disabled">Register</button> 
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	$(function() {
+		$("#tabRegister").click(function() {
+			$(this).addClass("active");
+			$("#tabLogin").removeClass("active");
+			$("#panelRegister").show();
+			$("#panelLogin").hide();
+		});
+		$("#tabLogin").click(function() {
+			$(this).addClass("active");
+			$("#tabRegister").removeClass("active");
+			$("#panelLogin").show();
+			$("#panelRegister").hide();
+		});
+	});
+</script>
